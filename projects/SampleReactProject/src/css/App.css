@@ -1,0 +1,22 @@
+/* App.css */
+.App {
+    display: flex;
+    flex-direction: column;
+    /* Coloca los elementos de Header y contenido en columna */
+    min-height: 100vh;
+    background: none;
+    /* Asegura que el contenido ocupe el 100% de la altura de la ventana */
+}
+
+body {
+    background-color: white;
+    /* Color de fondo global */
+}
+
+.main-content {
+    display: flex;
+    /* Esto permitirá que el Sidebar y el contenido principal estén alineados horizontalmente */
+    width: 100%;
+    margin-top: 60px;
+    /* Deja espacio para el header */
+}

@@ -1,0 +1,107 @@
+/* Sidebar.css */
+.sidebar {
+    width: 240px;
+    background-color: #585E51;
+    /* Color de fondo del sidebar */
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Logo sección (parte superior del sidebar) */
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Espacio considerable entre logo y las opciones de navegación */
+}
+
+.logo-section h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-section {
+    list-style: none;
+    padding: 0;
+}
+
+
+.nav-section li {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    /* Espaciado entre los elementos */
+}
+
+.nav-section img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-left: 30px;
+    /* Espacio entre icono y texto */
+}
+
+.nav-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+
+    /* Suaviza la transición al pasar el mouse */
+}
+
+/* Cambia el fondo a verde cuando se pasa el cursor */
+.nav-section li:hover {
+    background-color: #78A55A;
+    border-radius: 10px;
+}
+
+/* Sección inferior del sidebar (Profile, Settings, Logout) */
+.nav-section.lower {
+    margin-top: 30px;
+    /* Gran espacio entre las dos secciones */
+}
+
+.nav-section.lower li {
+    margin-bottom: 20px;
+    /* Espaciado entre los tres elementos */
+}
+
+
+.sidebar h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.sidebar ul li img {
+    width: 24px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 24px;
+    margin-right: 10px;
+    /* Añade espacio entre el ícono y el texto */
+}
