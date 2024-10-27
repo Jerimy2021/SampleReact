@@ -19,6 +19,7 @@ export function App() {
     if (storedUser) {
       setIsLoggedIn(true);
     }
+    document.title = 'GRIA UTEC';
   }, []);
 
   const handleLogin = () => {

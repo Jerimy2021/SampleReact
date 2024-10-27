@@ -1,5 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+header {
+    display: flex;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Estilos generales del sidebar */
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+
+    background-color: #2e342a;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    height: 100px;
+}
+
+.logo-section img {
+    width: 50px;
+    height: 70px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    height: 70px;
+    margin-top: 10px;
+}
+
+.logo-section h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+
+    margin-bottom: 0;
+}
+
+.logo-section h3 {
+    font-size: 1rem;
+    font-weight: 500;
+
+    margin-top: 0;
+}
+
+.nav-section {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.nav-section li {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Mantener el padding constante */
+    margin-bottom: 15px;
+    height: 30px;
+    position: relative; /* Necesario para el pseudo-elemento */
+    overflow: hidden; /* Evita que el contenido interno empuje el contenedor */
+    transition: background-color 0.3s ease; /* Suaviza la transición del fondo */
+}
+
+/* Sección pseudo-elemento para el efecto hover */
+.nav-section li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #78A55A; /* Color de fondo en hover */
+    transform: scaleX(0); /* Comienza en 0 para que no sea visible */
+    transform-origin: left; /* Asegura que se expanda desde la izquierda */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+    z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+.nav-section li:hover {
+    width: 180px;
+    border-radius: 0 30px 30px 0;
+}
+
+.nav-section li:hover::after {
+    transform: scaleX(1); /* Expande el pseudo-elemento al hacer hover */
+}
+
+/* Sección inferior del sidebar (Profile, Settings, Logout) */
+.nav-section.lower {
+    margin-top: 10px;
+    color: white;
+    /* Gran espacio entre las dos secciones */
+}
+
+.nav-section.lower li {
+    margin-bottom: 20px;
+    /* Espaciado entre los tres elementos */
+}
+
+.nav-section.lower span {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-section.lower span:hover {
+    text-decoration: underline;
+}
+
+.sideBar h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sideBar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sideBar ul li {
+    display: flex;
+    align-items: center;
+}
+
+.sideBar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.sideBar ul li a:hover {
+    text-decoration: underline;
+}
+
+.sideBar ul li img {
+    width: 24px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 24px;
+    margin-right: 10px;
+    /* Añade espacio entre el ícono y el texto */
+}
+
+
 /* Estilos generales del header */
-.header {
+.mainHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,21 +178,28 @@
     border-bottom: 1px solid #ccc;
     position: fixed;
     top: 0;
-    left: 300px;
+    left: 200px;
     right: 0;
     /* Esto asegura que el header comience justo después del sidebar */
-    width: calc(100% - 300px);
+    width: calc(100% - 200px);
     /* Ancho ajustado restando el sidebar */
     z-index: 100;
     padding-right: 40px;
+    height: 80px;
 }
 
 /* Ajuste de la posición del título */
+.title {
+    margin-left: 20px;
+}
+
 .title h1 {
-    font-size: 1.8rem;
+    font-weight: 900;
     margin: 0;
-    margin-left: 40px;
-    /* Mueve el título más a la derecha */
+}
+.title h3 {
+    font-weight: 500;
+    margin: 0;
 }
 
 /* Estilos para la información del usuario */
@@ -39,16 +216,17 @@
 .user-profile {
     display: flex;
     align-items: center;
-    background-color: #909294;
+    background-color: #2e342a;
     padding: 8px 12px;
-    border-radius: 20px;
+    border-radius: 50vh;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-profile span {
+    font-weight: 500;
     font-size: 1rem;
-    margin-right: 10px;
-    color: #333;
+    margin-right: 15px;
+    color: white;
 }
 
 .user-profile .profile-pic {
@@ -57,8 +235,19 @@
     border-radius: 50%;
 }
 
+.notifications {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2e342a;
+}
+
 .notifications .bell-icon {
-    font-size: 1.5rem;
-    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    fill: white;
     cursor: pointer;
 }
