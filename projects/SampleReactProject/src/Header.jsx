@@ -24,6 +24,7 @@ const Header = ({ onLogout }) => {
             <h3>UTEC</h3>
           </div>
         </div>
+        
         <ul className="nav-section">
           <li>
             <svg 
@@ -39,6 +40,7 @@ const Header = ({ onLogout }) => {
             </svg>
             <Link to="/mainboard">Main Board</Link>  {/* Link a la ruta /mainboard */}
           </li>
+          
           <li>
             <svg 
               xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +52,7 @@ const Header = ({ onLogout }) => {
             </svg>
             <Link to="/campus">Campus</Link>  {/* Link a la ruta /campus */}
           </li>
+          
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +65,7 @@ const Header = ({ onLogout }) => {
             <Link to="/market">Market</Link>  {/* Link a la ruta /market */}
           </li>
         </ul>
+        
         <ul className="nav-section lower">
           <li>
             <svg
@@ -75,6 +79,7 @@ const Header = ({ onLogout }) => {
             </svg>
             <Link to="/profile">Profile</Link>  {/* Link a la ruta /profile */}
           </li>
+          
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +91,7 @@ const Header = ({ onLogout }) => {
             </svg>
             <Link to="/settings">Settings</Link>  {/* Link a la ruta /settings */}
           </li>
+          
           <li onClick={onLogout}>  {/* Al hacer clic aquí, cerrará sesión */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -110,11 +116,13 @@ const Header = ({ onLogout }) => {
           <h3>Hola, {user.name}!</h3>
           <h1>Gamificación Consciente</h1>
         </div>
+        
         <div className="user-info">
           <div className="user-profile">
             <span>{user.name}</span>
             <img src={user.image || './assets/default.png'} alt="Profile" className="profile-pic" />
           </div>
+          
           <div className="notifications">
             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="bell-icon">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

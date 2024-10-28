@@ -1,56 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
 
 .main-board-container {
-    padding: 20px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* Dos columnas */
-    grid-template-rows: auto;
-    /* Una fila automática */
-    gap: 20px;
-    /* Espacio entre las celdas */
     justify-items: stretch;
-    /* Estirar el contenido */
+
+    padding: 20px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    
     font-family: 'Be Vietnam Pro', sans-serif;
+    
+    background: red;
+    width: calc(100vw - 400px);
+    margin-left: 250px;
+    height: calc(100vh - 200px);
+    margin-top: 20px;
 }
 
 .eco-contribution,
 .leaderboard-section,
 .user-search {
+    width: calc(50vw - 250px);
     background-color: #ffffff;
-    /* Color de fondo blanco para contraste */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra más pronunciada */
     text-align: center;
-    /* Alinear el texto al centro */
+    box-shadow: inset 0 0 0 2px #afb89d;
 }
 
 .eco-contribution h2,
 .leaderboard-section h2,
 .user-search h2 {
     margin-bottom: 15px;
-    /* Espacio entre el título y el contenido */
     font-size: 24px;
-    /* Aumentar el tamaño de la fuente */
-    color: #333;
-    /* Color de texto más oscuro */
+    color: #202811;
 }
 
 .eco-contribution {
-    grid-column: 1;
-    /* Se posiciona en la primera columna */
-    grid-row: 1;
-    /* Ocupa la primera fila */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #dfebbb;
+    gap: 10px;
+    color: #202811;
 }
 
+.eco-contribution fr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fr1 {
+    width: 200px;
+    margin-left: 30px;
+}
+
+.fr2 {
+    width: 200px;
+    margin-right: 30px;
+}
+
+.fr2 svg {
+    fill: #7f9f56;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.point-convertion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #202811;
+    color: white;
+}
+
+.eco-contribution img {
+    width: 100px;
+    border-radius: 10px;
+}
 
 .leaderboard-section {
     grid-column: 1;
-    /* Se posiciona en la primera columna */
     grid-row: 2;
-    /* Ocupa la segunda fila */
 }
 
 .user-search {
@@ -58,23 +94,14 @@
     flex-direction: column;
     align-items: center;
     grid-column: 2;
-    /* Se posiciona en la segunda columna */
-    width: 400px;
     grid-row: 1 / 3;
-    /* Ocupa tanto la primera como la segunda fila */
     text-align: center;
-}
-
-.eco-contribution img {
-    width: 100px;
-    margin-bottom: 15px;
 }
 
 .leaderboard-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* Eliminar márgenes */
 }
 
 .leaderboard-section li {
@@ -85,12 +112,54 @@
     /* Color del texto más claro */
 }
 
-.user-search input {
-    padding: 10px;
+.inputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
     width: 100%;
-    margin-bottom: 15px;
-    border-radius: 5px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+  
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 90px; /* Espacio para el botón */
+    border-radius: 5px 5px 5px 5px;
     border: 1px solid #ccc;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+  
+.input-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease;
+    color: white;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+}
+
+.input-container button:hover {
+    background-color: #38843c;
+}
+  
+.input-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .user-stats {
@@ -98,6 +167,7 @@
     color: white;
     padding: 10px;
     border-radius: 5px;
+    margin-top: 40px;
 }
 
 .eco-image {
@@ -105,3 +175,23 @@
     height: 100px;
     margin-bottom: 15px;
 }
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
