@@ -1,14 +1,11 @@
-/* Estilos generales para el formulario de login */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-    /* Fondo claro para el login */
 }
 
-/* Caja del login */
 .login-box {
     background: #fff;
     padding: 40px;
@@ -19,7 +16,6 @@
     text-align: center;
 }
 
-/* Estilos del formulario */
 .input-group {
     margin-bottom: 20px;
 }
@@ -37,7 +33,6 @@
     border-radius: 4px;
 }
 
-/* Botón de login */
 .login-button {
     width: 100%;
     padding: 10px;

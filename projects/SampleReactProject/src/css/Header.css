@@ -5,7 +5,6 @@ header {
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-/* Estilos generales del sidebar */
 .sideBar {
     display: flex;
     flex-direction: column;

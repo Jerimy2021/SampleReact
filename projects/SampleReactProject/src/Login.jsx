@@ -11,24 +11,23 @@ const Login = ({ onLogin }) => {
     setError(null);
 
     try {
-      const response = await fetch('https://vxjat17qsi.execute-api.us-east-1.amazonaws.com/Disrupton/login', {
+      const response = await fetch('https://ee24bgc8p3.execute-api.us-east-1.amazonaws.com/APIdisrupton/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username,
-          password,
+          "user_mail": username,
+          "user_password": password,
         }),
       });
 
       const rawData = await response.json();
-      const data = JSON.parse(rawData.body);
-
-      if (data.success) {
+      
+      if (rawData.statusCode == 200) {
         localStorage.setItem('user', JSON.stringify({
-          name: data.name,
-          image: data.image,
+          name: rawData.user_name,
+          image: rawData.image,
         }));
         onLogin();
       } else {
@@ -40,10 +39,10 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="login-container"> {/* Cambiado a login-container */}
-      <div className="login-box"> {/* Cambiado a login-box */}
+    <div className="login-container">
+      <div className="login-box">
         <form onSubmit={handleSubmit}>
-          <div className="input-group"> {/* Cambiado a input-group */}
+          <div className="input-group">
             <label htmlFor="username">User name / Email</label>
             <input
               type="text"
@@ -52,7 +51,7 @@ const Login = ({ onLogin }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="input-group"> {/* Cambiado a input-group */}
+          <div className="input-group">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -61,7 +60,7 @@ const Login = ({ onLogin }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button className="login-button" type="submit"> {/* Cambiado a login-button */}
+          <button className="login-button" type="submit">
             Log In Now
           </button>
         </form>
